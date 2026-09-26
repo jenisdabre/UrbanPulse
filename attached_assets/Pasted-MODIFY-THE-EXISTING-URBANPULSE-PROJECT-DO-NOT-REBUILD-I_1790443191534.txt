@@ -1,0 +1,1152 @@
+MODIFY THE EXISTING URBANPULSE PROJECT — DO NOT REBUILD IT FROM SCRATCH.
+
+The current UrbanPulse prototype is already implemented and working. I want to refine the product structure and feature hierarchy.
+
+The most important change is to clearly establish ONLY FOUR PRIMARY UNIQUE / DIFFERENTIATING FEATURES.
+
+These four are:
+
+1. Citizen "See It → Report It"
+2. Repair Verification
+3. Bus as a Witness
+4. Ask the City
+
+Some previously discussed features should remain, but ONLY as sub-features inside these four primary features:
+
+- "People Confirmed This" → part of Citizen Reporting
+- "What Happened Here?" → part of Repair Verification / Issue Timeline
+- Voice + Local Language → part of Ask the City
+
+Do NOT present those three as separate standalone features.
+
+Federated Learning and Privacy should remain as important technical architecture components under AI & Privacy, but should NOT be presented as additional primary unique features.
+
+==================================================
+1. IMPORTANT — PRESERVE THE EXISTING APP
+==================================================
+
+Do NOT rebuild the application.
+
+First inspect the current UrbanPulse implementation.
+
+Preserve all working functionality, styling, routes, map functionality, mock data, and components wherever possible.
+
+Modify only what is needed to improve the feature hierarchy and strengthen the four selected differentiators.
+
+Do not remove any capability explicitly required by SIH Problem Statement 26124.
+
+The current application is a frontend prototype with simulated/mock data.
+
+Do not claim:
+- real-time Mumbai government data
+- real AI inference
+- real federated model training
+- real citizen data
+- real government system integration
+
+Keep the existing "Prototype / Simulated Data" labeling.
+
+==================================================
+2. PRODUCT CONCEPT
+==================================================
+
+UrbanPulse is a unified AI-powered urban intelligence platform for Mumbai.
+
+Core concept:
+
+PUBLIC BUSES
+→ act as mobile urban sensing units
+
+EDGE AI
+→ processes camera information locally
+
+CITY INTELLIGENCE
+→ aggregates fleet-wide observations
+
+CITIZENS
+→ can report and validate urban issues
+
+MULTIPLE BUSES
+→ can provide multi-perspective incident evidence
+
+REPAIR VERIFICATION
+→ checks whether reported problems were actually fixed
+
+ASK THE CITY
+→ allows authorities to query city intelligence naturally
+
+PRIVACY + FEDERATED LEARNING
+→ support privacy-preserving local processing and collaborative model improvement
+
+==================================================
+3. THE FOUR PRIMARY UNIQUE FEATURES
+==================================================
+
+The UI should clearly communicate these four as the main differentiators.
+
+Do NOT create a "Unique Features" page with a huge list.
+
+Instead, integrate them naturally throughout the product.
+
+The four primary features are:
+
+------------------------------------------
+1. CITIZEN "SEE IT → REPORT IT"
+------------------------------------------
+
+This is the primary citizen participation feature.
+
+A citizen/passenger can report an urban problem.
+
+Example:
+
+"There is a pothole here."
+
+The prototype should simulate:
+
+Citizen report
+→ issue identification
+→ GPS capture
+→ categorization
+→ duplicate detection
+→ matching against existing fleet/citizen observations
+→ consolidated issue
+
+The key innovation is NOT simply citizen reporting.
+
+The important concept is:
+
+FLEET OBSERVATIONS
++
+CITIZEN OBSERVATIONS
++
+AUTOMATIC DEDUPLICATION
++
+VALIDATION
+
+Example:
+
+30 citizens report the same pothole.
+
+Do NOT show:
+
+30 separate complaints.
+
+Instead show:
+
+1 CONSOLIDATED ISSUE
+
+30 citizen observations
+4 bus observations
+34 total supporting observations
+
+Example UI:
+
+Pothole #PTH-1042
+
+S.V. Road
+
+Citizen Reports
+30
+
+Fleet Observations
+4
+
+Consolidated Issue
+1
+
+Status
+Under Verification
+
+Add a "Report an Issue" interaction.
+
+Categories:
+
+- Pothole
+- Waterlogging
+- Damaged Road
+- Missing Road Sign
+- Broken Streetlight
+- Other
+
+Simulate:
+
+GPS captured
+↓
+Issue categorized
+↓
+Checking for duplicate...
+↓
+Existing issue found
+↓
+Report linked to PTH-1042
+
+Use coherent mock data.
+
+------------------------------------------
+SUB-FEATURE: "PEOPLE CONFIRMED THIS"
+------------------------------------------
+
+DO NOT create this as a separate page.
+
+Make it a validation/confidence layer INSIDE Citizen Reporting and relevant issue details.
+
+Example:
+
+POTHOLE #PTH-1042
+
+34 independent observations
+
+30 citizens
+4 buses
+
+Last observed:
+8 minutes ago
+
+Show a simple confidence/validation visualization.
+
+The purpose is to demonstrate that one AI detection can be strengthened by multiple independent observations.
+
+The wording can be:
+
+"People Confirmed This"
+
+or:
+
+"Independent observations"
+
+Use both where appropriate.
+
+Important:
+
+The system should distinguish:
+- citizen observations
+- fleet observations
+
+This should connect directly with automatic duplicate detection.
+
+------------------------------------------
+2. REPAIR VERIFICATION
+------------------------------------------
+
+This should be a major end-to-end workflow.
+
+The system should not stop after detecting a problem.
+
+Workflow:
+
+DETECT
+↓
+REPORT
+↓
+REPAIR
+↓
+RE-OBSERVE
+↓
+VERIFY
+
+Example:
+
+Pothole #PTH-1042
+
+Detected
+↓
+Reported
+↓
+Repair initiated
+↓
+Authority marks repaired
+↓
+Bus later passes the location
+↓
+Edge AI re-observes the location
+↓
+System verifies repair
+
+Important scenario:
+
+Authority says:
+
+"Repaired"
+
+But a bus later detects:
+
+"Pothole still present"
+
+Then show:
+
+REPAIR VERIFICATION REQUIRED
+
+Allow the prototype to simulate this workflow.
+
+Button:
+
+"Simulate Re-observation"
+
+Statuses:
+
+- Detected
+- Reported
+- Repair In Progress
+- Marked Repaired
+- Awaiting Re-observation
+- Verified
+- Repair Requires Verification
+
+Create a strong visual timeline.
+
+------------------------------------------
+SUB-FEATURE: "WHAT HAPPENED HERE?"
+------------------------------------------
+
+DO NOT make this a separate navigation item.
+
+Make it part of the issue/repair/incident timeline.
+
+When viewing an issue or selecting a location on the map, provide:
+
+"What Happened Here?"
+
+Show a chronological history.
+
+Example:
+
+09:12
+Pothole detected by Bus 142
+
+10:03
+Citizen report received
+
+10:15
+Duplicate matched to PTH-1042
+
+11:20
+Issue reported to road authority
+
+Aug 24
+Repair initiated
+
+Aug 26
+Marked repaired
+
+Aug 27
+Bus 142 re-observed location
+
+Aug 27
+Verification required
+
+Then provide a concise AI-style summary:
+
+"Multiple observations identified a persistent road issue. The location was marked repaired but was subsequently re-observed by a bus, triggering verification."
+
+This makes the map and issue records feel historical and interactive instead of static.
+
+------------------------------------------
+3. BUS AS A WITNESS
+------------------------------------------
+
+This is one of the strongest differentiators.
+
+It directly leverages buses as mobile urban sensing units.
+
+When an incident occurs, correlate observations from multiple buses/cameras.
+
+Example:
+
+INCIDENT
+Possible road collision
+
+Bus #217
+Approaching
+09:41:12
+
+Bus #217
+Incident detected
+09:41:18
+
+Bus #217
+Passing location
+09:41:31
+
+Bus #304
+Independent observation
+09:42:04
+
+Show:
+
+- Bus ID
+- camera
+- timestamp
+- GPS/location
+- direction of travel
+- road segment
+- observation type
+
+Create a visual multi-perspective incident timeline.
+
+Show a button:
+
+"Show Incident Timeline"
+
+The timeline should communicate:
+
+Bus approaching
+→ incident occurs
+→ bus passes
+→ another bus arrives
+→ additional observation
+
+The key message:
+
+Instead of relying on a single fixed camera, the fleet can provide multiple observations from different buses and directions.
+
+This should be integrated into:
+
+Incident Details
+
+rather than necessarily creating another standalone page.
+
+==================================================
+4. ASK THE CITY
+==================================================
+
+Keep this as the fourth major differentiator.
+
+This is a natural-language city intelligence interface.
+
+It should NOT look like a generic ChatGPT clone.
+
+It should feel like a specialized query interface for UrbanPulse city data.
+
+Example questions:
+
+"Which areas had the highest road deterioration this week?"
+
+"Show me all critical hazards near schools."
+
+"Which roads should be inspected before tomorrow's rain?"
+
+"Why is traffic getting worse in this area?"
+
+"Which routes currently have the highest delays?"
+
+"Which road issues are still unresolved?"
+
+When the user asks a supported question, return a predefined/mock intelligent answer.
+
+Example:
+
+USER:
+Which areas had the highest road deterioration this week?
+
+URBANPULSE:
+
+"Andheri West and S.V. Road recorded the highest number of road-condition observations this week."
+
+Then show:
+
+Road issues:
+27
+
+High severity:
+8
+
+Affected buses:
+11
+
+[View on Map]
+
+Responses should use the existing mock dataset so the answers are internally consistent.
+
+------------------------------------------
+SUB-FEATURE: VOICE + LOCAL LANGUAGES
+------------------------------------------
+
+DO NOT create a separate Voice/Language page.
+
+Make voice input part of Ask the City.
+
+Add a microphone button.
+
+When clicked, simulate:
+
+Listening...
+
+Then allow/show sample queries in:
+
+English
+Hindi
+Marathi
+
+Example:
+
+"Mere route pe koi pothole hai kya?"
+
+Response:
+
+"Haan. Aapke route par 2 high-severity road hazards detect hue hain."
+
+The language selector can include:
+
+English
+Hindi
+Marathi
+
+This is simulated prototype behavior.
+
+The voice feature exists to make Ask the City more accessible.
+
+==================================================
+5. FEDERATED LEARNING
+==================================================
+
+KEEP Federated Learning.
+
+However, it should NOT be presented as a fifth primary unique feature.
+
+Place it under:
+
+AI & Privacy
+
+It is a technical architecture component.
+
+Create a technically accurate simulated Federated Learning workflow.
+
+Concept:
+
+Each bus keeps local training data.
+
+Local training occurs on the bus.
+
+Only model updates are represented as being transmitted.
+
+A central system performs simulated secure aggregation.
+
+Then a new global model is produced.
+
+Visual:
+
+GLOBAL MODEL
+↓
+Bus 102
+Bus 118
+Bus 127
+Bus 143
+↓
+LOCAL TRAINING
+↓
+MODEL UPDATES
+↓
+SECURE AGGREGATION
+↓
+GLOBAL MODEL v1.12
+
+Button:
+
+"Run Training Round"
+
+When clicked:
+
+Preparing local datasets
+→ Bus 102 training
+→ Bus 118 training
+→ Bus 127 training
+→ Bus 143 training
+→ collecting model updates
+→ secure aggregation
+→ global model updated
+
+Show:
+
+Global Model
+v1.12
+
+Training Round
+12
+
+Participating Buses
+24
+
+Raw Camera Data Transferred
+0 GB
+
+Clearly label:
+
+"Simulated Federated Learning Environment"
+
+Do not claim actual model training.
+
+==================================================
+6. PRIVACY CENTER
+==================================================
+
+KEEP Privacy Center under:
+
+AI & Privacy
+
+Do NOT present it as another primary unique feature.
+
+Show:
+
+Camera Feed
+↓
+Local Privacy Processing
+↓
+Face Anonymization
+↓
+License Plate Protection
+↓
+Edge AI
+↓
+Required Metadata / Model Update
+↓
+Central Command Center
+
+Show simulated privacy metrics:
+
+Raw video transmitted
+0 GB
+
+Faces anonymized
+1,284
+
+License plates protected
+436
+
+Local processing
+Active
+
+Data minimization
+Enabled
+
+Secure transmission
+Active
+
+Retention policy
+Configured
+
+Include toggleable prototype controls:
+
+Face anonymization
+ON
+
+License plate protection
+ON
+
+Raw video upload
+OFF
+
+Extended retention
+OFF
+
+These are simulated controls.
+
+==================================================
+7. NAVIGATION
+==================================================
+
+Keep the navigation concise.
+
+Main navigation:
+
+Overview
+City Intelligence
+Fleet
+Incidents
+AI & Privacy
+
+Do NOT create separate navigation items for:
+
+- People Confirmed This
+- What Happened Here?
+- Voice
+- Local Languages
+- Repair Verification
+- Bus as a Witness
+
+These should appear contextually inside the relevant workflows.
+
+Suggested placement:
+
+OVERVIEW
+- city overview
+- key metrics
+- map
+- live alerts
+- citizen reporting entry point
+
+CITY INTELLIGENCE
+- traffic
+- road conditions
+- infrastructure
+- route delays
+- OD traffic
+- Ask the City
+
+FLEET
+- buses
+- camera status
+- edge AI
+- bus details
+- Bus as a Witness connections
+
+INCIDENTS
+- incidents
+- incident details
+- Bus as a Witness
+- issue/repair timeline
+- Repair Verification
+- People Confirmed This where relevant
+
+AI & PRIVACY
+- Federated Learning
+- Privacy Center
+
+==================================================
+8. CORE SIH PS 26124 FEATURES
+==================================================
+
+Do NOT remove or weaken the actual Problem Statement requirements.
+
+The prototype must continue to represent:
+
+- public buses as mobile urban sensing units
+- multiple onboard cameras
+- front/rear/side/passenger camera coverage
+- pothole detection
+- damaged road detection
+- missing road divider detection
+- missing zebra crossing detection
+- damaged traffic sign detection
+- missing traffic sign detection
+- waterlogging detection
+- other road hazards
+- vehicle detection
+- vehicle classification
+- vehicle counting
+- vehicle density estimation
+- traffic bottleneck identification
+- traffic congestion monitoring
+- vulnerable pedestrian detection
+- school-child road-crossing safety
+- hit-and-run detection
+- rash-driving detection
+- offending vehicle detection
+- offending vehicle tracking
+- registration-number OCR
+- OCR confidence
+- timestamp
+- GPS
+- secure incident sharing
+- centralized fleet intelligence
+- GIS visualization
+- congestion heat maps
+- infrastructure deficiency analysis
+- OD traffic patterns
+- route delay estimation
+- actionable insights
+- edge-AI processing
+- reliable alerts
+- road condition maps
+- traffic analytics
+- incident reports
+- decision support
+- proactive road maintenance support
+- traffic management support
+- public safety support
+- evidence-based decision making
+- bandwidth optimization through edge processing
+
+These are CORE SYSTEM CAPABILITIES.
+
+Do not call them "unique features."
+
+==================================================
+9. MAP
+==================================================
+
+Keep the existing Mumbai map.
+
+Use:
+
+- OpenStreetMap
+- realistic Mumbai geography
+- simulated fleet positions
+- incident markers
+- road hazards
+- congestion overlays
+- traffic heatmaps
+- route lines
+- road condition layers
+- infrastructure issues
+
+Map interaction:
+
+marker
+→ popup
+→ side panel
+→ full details
+
+Incident markers should use:
+
+category icon + subtle severity color
+
+Do not rely only on color.
+
+==================================================
+10. OVERVIEW DASHBOARD
+==================================================
+
+Keep the dashboard focused.
+
+Do NOT add unnecessary cards for every feature.
+
+Show the most important:
+
+- Active Buses
+- Active Incidents
+- Road Hazards
+- Congestion
+- Route Delays
+- Pedestrian Safety Alerts
+
+Main layout:
+
+TOP:
+Key metrics
+
+MAIN:
+Large Mumbai map
+
+RIGHT:
+Live Alerts
+
+SMALL SECTION:
+"What’s happening?"
+
+The "What's happening?" section is simply a concise current-city summary.
+
+It is NOT the separate "What Happened Here?" feature.
+
+Make this distinction clear.
+
+==================================================
+11. FLEET
+==================================================
+
+Keep:
+
+- active buses
+- offline buses
+- camera health
+- route
+- location
+- edge AI
+- local model
+- privacy
+- federated learning participation
+
+Clicking a bus:
+
+popup
+→ side panel
+→ full Bus Details page
+
+Bus Details:
+
+- Bus ID
+- route
+- location
+- direction
+- camera status
+- recent detections
+- recent incidents
+- local AI model
+- privacy status
+- federated learning status
+- recent activity
+
+==================================================
+12. INCIDENTS
+==================================================
+
+Keep the incident management system.
+
+Filters:
+
+- type
+- severity
+- date
+- location
+- bus
+- status
+- verified/unverified
+
+Incident types:
+
+- Pothole
+- Damaged Road
+- Waterlogging
+- Missing Divider
+- Missing Zebra Crossing
+- Traffic Sign Issue
+- Traffic Congestion
+- Pedestrian Risk
+- Rash Driving
+- Hit-and-Run
+- Other Road Hazard
+
+Full Incident Details should contain:
+
+- incident ID
+- type
+- severity
+- location
+- timestamp
+- GPS
+- detection confidence
+- source bus
+- related buses
+- evidence
+- status
+- incident timeline
+
+For hit-and-run/rash-driving:
+
+- offending vehicle
+- tracking
+- registration number
+- OCR confidence
+- timestamp
+- GPS
+
+Use simulated values.
+
+==================================================
+13. CITY INTELLIGENCE
+==================================================
+
+Keep:
+
+Traffic:
+- vehicle count
+- classification
+- density
+- bottlenecks
+- congestion
+- average speed
+
+Road:
+- potholes
+- damaged roads
+- missing dividers
+- missing zebra crossings
+- traffic signs
+- waterlogging
+
+Infrastructure:
+- deficiencies
+- unresolved issues
+- repair status
+
+Routes:
+- delays
+- affected routes
+- estimated delay
+
+OD patterns:
+- origin-destination visualization
+- simulated traffic flows
+
+Traffic analytics:
+- trends
+- congestion
+- speed
+- vehicle density
+- route delays
+
+==================================================
+14. REPORTS
+==================================================
+
+Keep incident report generation.
+
+A report should contain:
+
+- incident ID
+- incident type
+- location
+- timestamp
+- GPS
+- source bus
+- related buses
+- evidence
+- OCR information where applicable
+- confidence
+- current status
+
+Provide simulated:
+
+"Generate Report"
+
+and:
+
+"Export Report"
+
+==================================================
+15. NOTIFICATIONS
+==================================================
+
+Keep notifications for:
+
+- critical incidents
+- new hazards
+- citizen reports
+- repair verification
+- fleet events
+- federated training completion
+
+Make them clickable.
+
+==================================================
+16. DESIGN
+==================================================
+
+Keep the existing design direction:
+
+MODERN SAAS
++
+SMART CITY
++
+PROFESSIONAL / GOVERNMENT
+
+Use:
+
+- light mode
+- white/off-white background
+- deep navy text
+- restrained blue/teal accents
+- thin borders
+- subtle shadows
+- slightly rounded cards
+- clean typography
+- professional data visualization
+
+Avoid:
+
+- neon colors
+- purple/orange/green neon
+- cyberpunk
+- excessive glow
+- excessive gradients
+- giant AI graphics
+- generic AI dashboard appearance
+
+Keep the real-world map + intelligent overlays.
+
+==================================================
+17. MOCK DATA
+==================================================
+
+Keep coherent interconnected mock data.
+
+Example:
+
+Bus 142
+Route 305
+S.V. Road
+observed PTH-1042
+
+Citizen report
+same location
+matched to PTH-1042
+
+Bus 217
+observed incident INC-204
+
+Bus 304
+independent observation
+same incident INC-204
+
+PTH-1042:
+Detected
+→ citizen reports
+→ duplicate consolidation
+→ repair
+→ re-observation
+→ verification
+
+This allows the unique features to connect to each other.
+
+Use approximately:
+
+20–30 buses
+20–40 incidents
+10–15 routes
+multiple road hazards
+traffic zones
+pedestrian safety alerts
+infrastructure issues
+citizen reports
+
+==================================================
+18. FINAL PRODUCT STORY
+==================================================
+
+The final demo should communicate this story:
+
+1. Buses continuously sense the city.
+
+2. Edge AI detects road, traffic, infrastructure and safety conditions.
+
+3. Citizens can also report problems.
+
+4. Citizen reports are automatically matched with existing issues instead of creating duplicate complaints.
+
+5. Multiple buses can provide independent observations and reconstruct incidents.
+
+6. When authorities repair an issue, buses can re-observe the location and help verify whether the problem was actually fixed.
+
+7. Authorities can ask the city questions naturally through Ask the City.
+
+8. Voice and local languages are simply additional ways to interact with Ask the City.
+
+9. Federated Learning allows simulated collaborative model improvement while raw training data remains local.
+
+10. Privacy processing protects sensitive visual data.
+
+==================================================
+19. FINAL VERIFICATION
+==================================================
+
+After modifying the existing project:
+
+- run the application
+- type-check
+- build successfully
+- verify there are no browser console errors
+- verify all navigation works
+- verify map markers work
+- verify citizen reporting works
+- verify duplicate detection works
+- verify People Confirmed This appears inside citizen/issue validation
+- verify repair workflow works
+- verify What Happened Here? appears inside issue/repair timeline
+- verify Bus as a Witness works inside incident details
+- verify Ask the City works
+- verify voice/local-language interaction appears inside Ask the City
+- verify Federated Learning simulation works
+- verify Privacy Center works
+- verify existing PS-required features remain accessible
+
+IMPORTANT:
+Do not create new unnecessary standalone pages.
+
+The final product should have FOUR memorable differentiators:
+
+📱 Citizen See It → Report It
+🔁 Repair Verification
+🚌 Bus as a Witness
+💬 Ask the City
+
+Everything else should support the core PS or strengthen one of these four.
