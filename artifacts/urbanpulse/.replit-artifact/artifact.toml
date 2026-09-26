@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "UrbanPulse"
+description = "A polished interactive Mumbai urban-intelligence prototype showing simulated fleet sensing, incident response, traffic intelligence, federated learning, and privacy-preserving edge processing."
+version = "1.0.0"
+id = "artifacts/urbanpulse"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22702
+
+[services.development]
+run = "pnpm --filter @workspace/urbanpulse run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/urbanpulse", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/urbanpulse/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22702"
+BASE_PATH = "/"

@@ -1,0 +1,1546 @@
+Build a polished, fully interactive frontend prototype for an **AI-Powered Mobile Urban Intelligence Platform** based on SIH Problem Statement 26124.
+
+IMPORTANT:
+
+* This is a **frontend prototype/demo**, not a production backend.
+* Use realistic hardcoded/mock data and simulated AI behavior.
+* Do NOT build actual computer-vision models, real federated-learning infrastructure, or a production database.
+* However, the UI and workflows must represent the underlying concepts accurately.
+* Clearly label simulated/demo values where appropriate.
+* The application must feel like a real deployable urban-intelligence product, not a generic AI dashboard.
+* The prototype city is **Mumbai, India**.
+* Do not use Figma. Build the actual interactive web application in Replit.
+
+==================================================
+
+1. TECHNOLOGY
+   ==================================================
+
+Use:
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* Lucide React icons
+* Recharts for charts
+* Leaflet + React Leaflet for the map
+* OpenStreetMap tiles where appropriate
+* Local mock data / TypeScript data objects
+* React state for interactions
+
+Keep the architecture clean and componentized.
+
+Suggested structure:
+
+src/
+components/
+pages/
+data/
+types/
+hooks/
+utils/
+
+Use reusable components for:
+
+* cards
+* metric cards
+* badges
+* tables
+* side panels
+* modals
+* charts
+* map markers
+* filters
+* status indicators
+* timelines
+* alert cards
+
+==================================================
+2. OVERALL DESIGN DIRECTION
+===========================
+
+The visual style should combine:
+
+* Modern SaaS
+* Smart City technology
+* Professional/government platform
+* Sophisticated enterprise software
+
+DO NOT make it look like a typical AI-generated dashboard.
+
+Avoid:
+
+* neon cyan
+* neon purple
+* excessive orange/green
+* glowing cards
+* excessive gradients
+* futuristic cyberpunk styling
+* giant decorative AI graphics
+* excessive rounded "bubble" cards
+* excessive shadows
+
+Use:
+
+* light mode
+* white/off-white background
+* deep navy/dark text
+* restrained blue/teal accent colors
+* subtle secondary colors
+* thin borders
+* very subtle shadows
+* slightly rounded cards
+* sharp tables/data areas
+* clean typography
+* generous but not excessive spacing
+
+The UI should look sophisticated enough for:
+
+* municipal authorities
+* transport authorities
+* police/traffic departments
+* infrastructure/road departments
+* senior decision makers
+
+Use a **hybrid card style**:
+
+* slightly rounded
+* thin border
+* subtle shadow
+* not overly soft
+
+Use a consistent visual hierarchy.
+
+==================================================
+3. PRODUCT IDENTITY
+===================
+
+Create a proper product name and logo treatment.
+
+Use a temporary professional name such as:
+
+**UrbanPulse**
+
+But make the name easy to change later.
+
+The logo should be simple and professional, combining the idea of:
+
+* city
+* mobility
+* intelligence
+
+Do NOT use a generic AI brain logo.
+
+The header should show:
+
+UrbanPulse
+AI-Powered City Intelligence
+
+and:
+
+Mumbai • Prototype Environment
+
+Include a small "Prototype / Simulated Data" indicator somewhere unobtrusive but visible.
+
+==================================================
+4. PRIMARY NAVIGATION
+=====================
+
+Do NOT create 15 separate sidebar items.
+
+Use a clean sidebar with these major sections:
+
+1. Overview
+2. City Intelligence
+3. Fleet
+4. Incidents
+5. AI & Privacy
+
+The pages/features inside those sections should be logically grouped.
+
+Sidebar should include:
+
+* product logo
+* navigation
+* small system status indicator
+* user/role area
+* settings/help if useful
+
+Use a professional collapsible/sidebar design if it can be done cleanly.
+
+==================================================
+5. USER / ROLE MODEL
+====================
+
+The product is a unified City Intelligence platform.
+
+It should support different departments through role-based views/access.
+
+Create a small role selector in the UI with options such as:
+
+* City Command Center
+* Transport Authority
+* Traffic & Police
+* Road Infrastructure
+
+This can simply change labels/visible contextual information in the prototype.
+
+Do not build actual authentication.
+
+==================================================
+6. OVERVIEW / MAIN DASHBOARD
+============================
+
+The main dashboard must combine:
+
+**Option 3 + a small part of Option 4:**
+
+* top-level intelligence metrics
+* large city map
+* live alerts
+* "What's happening?" intelligence summary
+
+Do NOT make the dashboard only a grid of statistics.
+
+Top metric cards should include the most relevant PS capabilities:
+
+* Active Buses
+* Active Incidents
+* Road Hazards
+* Traffic / Congestion
+* Route Delays
+* Pedestrian Safety Alerts
+
+Use realistic simulated numbers.
+
+Example:
+
+Active Buses
+142 / 186
+
+Active Incidents
+27
+
+Road Hazards
+64
+
+Congested Zones
+18
+
+Route Delays
+12
+
+Safety Alerts
+8
+
+==================================================
+7. CITY DIGITAL HEALTH CARD
+===========================
+
+Include a prominent but compact **City Digital Health Card**.
+
+This should provide a high-level city condition summary.
+
+Example:
+
+CITY HEALTH
+76 / 100
+
+Traffic — 68
+Roads — 72
+Pedestrian Safety — 81
+Waterlogging — 74
+Public Transport — 84
+Infrastructure — 77
+
+Also show weekly changes.
+
+Important:
+This is a prototype metric, not a scientifically validated city score.
+
+Label it appropriately as:
+"Composite prototype indicator"
+
+==================================================
+8. "WHAT'S HAPPENING?" SECTION
+==============================
+
+Add a small intelligence summary section.
+
+Example:
+
+WHAT'S HAPPENING?
+
+"3 high-priority road incidents were detected in the last 30 minutes. Congestion is increasing around S.V. Road, while two waterlogging reports were independently confirmed."
+
+Show 2–4 short bullet insights.
+
+This should feel like an executive city summary.
+
+Do not make it look like a chatbot.
+
+==================================================
+9. MAIN MAP
+===========
+
+The map is one of the most important components.
+
+Use a realistic-looking Mumbai map using Leaflet/OpenStreetMap.
+
+Use simulated Mumbai data.
+
+Map requirements:
+
+* realistic roads/geography
+* bus markers
+* incident markers
+* road hazard markers
+* traffic/congestion overlays
+* route lines
+* heatmap-style visualizations where practical
+* road condition indicators
+* map layer controls
+
+Use recognizable Mumbai locations/areas where possible.
+
+Examples:
+
+* S.V. Road
+* Andheri
+* Bandra
+* Dadar
+* Kurla
+* Powai
+* Western Express Highway
+* Eastern Express Highway
+
+Do not imply the displayed incidents are real.
+
+==================================================
+10. MAP MARKERS
+===============
+
+Use category icons combined with subtle severity colors.
+
+Do NOT rely only on red/yellow/green.
+
+Categories:
+
+Road hazard
+Traffic
+Pedestrian safety
+Waterlogging
+Infrastructure
+Rash driving
+Hit-and-run
+Vehicle detection
+Verified issue
+Bus
+
+Severity:
+
+Critical
+High
+Medium
+Low
+Verified
+
+Marker interaction:
+
+Click marker
+→ small popup
+→ side panel
+→ option to open full details page
+
+==================================================
+11. MAP LAYERS
+==============
+
+Provide a layer-control panel.
+
+Example:
+
+☑ Fleet
+☑ Incidents
+☑ Road Hazards
+☑ Traffic
+☑ Congestion Heatmap
+☑ Road Condition
+☑ Route Delays
+☐ Infrastructure
+☐ Pedestrian Safety
+
+Make the toggles actually work.
+
+The map should update visually when layers are enabled/disabled.
+
+==================================================
+12. LIVE ALERTS
+===============
+
+Place a Live Alerts panel beside the map.
+
+Show:
+
+* incident type
+* location
+* severity
+* time
+* bus/source
+* status
+
+Example:
+
+HIGH
+Pothole detected
+S.V. Road
+8 min ago
+Bus 142
+
+CRITICAL
+Rash driving detected
+Bandra
+3 min ago
+Bus 217
+
+MEDIUM
+Waterlogging
+Kurla
+14 min ago
+
+Clicking an alert should open the corresponding incident side panel.
+
+==================================================
+13. CITY INTELLIGENCE PAGE
+==========================
+
+Create a dedicated City Intelligence page.
+
+Include:
+
+### Traffic Intelligence
+
+* vehicle count
+* vehicle classification
+* density
+* congestion
+* bottlenecks
+* average speed
+* traffic heatmap
+
+### Road Intelligence
+
+* potholes
+* damaged roads
+* missing dividers
+* missing zebra crossings
+* damaged/missing traffic signs
+* waterlogging
+* other hazards
+
+### Infrastructure Intelligence
+
+* infrastructure deficiencies
+* unresolved issues
+* verified repairs
+
+### Route Intelligence
+
+* route delays
+* affected routes
+* estimated delay
+* traffic conditions
+
+### OD Traffic Patterns
+
+Create a visually clear OD flow visualization or matrix.
+
+Use mock data such as:
+
+Andheri → Bandra
+Bandra → Dadar
+Kurla → BKC
+Borivali → Andheri
+
+Clearly mark OD data as simulated.
+
+==================================================
+14. ASK THE CITY
+================
+
+Create an **Ask the City** interface.
+
+This is NOT a generic ChatGPT clone.
+
+Make it a city-data query interface.
+
+Include suggested questions:
+
+"Which areas had the highest road deterioration this week?"
+
+"Show me critical hazards near schools."
+
+"Why is traffic getting worse in this area?"
+
+"Which routes currently have the highest delays?"
+
+"What happened around S.V. Road today?"
+
+"Which road issues are still awaiting verification?"
+
+When the user clicks a question or submits one of these supported questions, return a predefined intelligent response based on the mock dataset.
+
+Responses should include:
+
+* concise answer
+* relevant numbers
+* locations
+* supporting incidents
+* optional "View on Map" button
+
+==================================================
+15. FLEET PAGE
+==============
+
+Create a fleet monitoring page.
+
+Show:
+
+* total buses
+* active buses
+* offline buses
+* buses currently transmitting
+* camera health
+* edge-AI status
+* local model status
+* privacy status
+* federated-learning participation
+
+Fleet table:
+
+Bus ID
+Route
+Location
+Status
+Cameras
+Edge AI
+Privacy
+Federated Model
+Last Observation
+
+Example:
+
+BUS-142
+Route 305
+S.V. Road
+Active
+6/6
+Active
+Protected
+v1.12
+
+Make the table filterable and searchable.
+
+==================================================
+16. BUS DETAILS PAGE
+====================
+
+Clicking a bus should work like:
+
+Map/table
+→ popup
+→ side panel
+→ Full Bus Details page
+
+Bus Details should include:
+
+* Bus ID
+* route
+* current location
+* direction
+* operating status
+* camera status
+* front camera
+* rear camera
+* left camera
+* right camera
+* passenger cabin camera
+* recent detections
+* recent incidents
+* local AI model version
+* privacy processing status
+* federated-learning status
+* last synchronization
+* recent activity timeline
+
+Show a small simulated bus route on a map.
+
+==================================================
+17. INCIDENTS PAGE
+==================
+
+Create a complete incident management page.
+
+Filters:
+
+* incident type
+* severity
+* date/time
+* location
+* bus
+* status
+* verified/unverified
+
+Incident types:
+
+* Pothole
+* Damaged Road
+* Waterlogging
+* Missing Divider
+* Missing Zebra Crossing
+* Traffic Sign Issue
+* Traffic Congestion
+* Pedestrian Risk
+* Rash Driving
+* Hit-and-Run
+* Other Road Hazard
+
+Incident cards/table should show:
+
+* incident ID
+* category
+* severity
+* location
+* detected time
+* source bus
+* confidence
+* status
+
+==================================================
+18. INCIDENT INTERACTION
+========================
+
+Use this interaction consistently:
+
+Incident marker/card
+→ popup
+→ side panel
+→ Full Incident Details page
+
+Side panel should show:
+
+* incident type
+* severity
+* location
+* time
+* source
+* confidence
+* status
+* quick evidence
+* related buses
+* related observations
+
+Button:
+
+"View Full Incident"
+
+==================================================
+19. FULL INCIDENT DETAILS
+=========================
+
+Create a rich incident page.
+
+Include:
+
+### Incident Overview
+
+* ID
+* type
+* severity
+* location
+* timestamp
+* GPS
+* status
+
+### AI Detection
+
+* detection confidence
+* object/vehicle information
+* simulated model information
+
+### For hit-and-run / rash driving:
+
+* offending vehicle
+* vehicle tracking
+* registration number
+* OCR confidence
+* timestamp
+* GPS
+
+Use a realistic mock registration number.
+
+Clearly label it as simulated demo data.
+
+### Incident Timeline
+
+Show chronological events.
+
+==================================================
+20. "WHAT HAPPENED HERE?"
+=========================
+
+This should be accessible from the map.
+
+When a user clicks a location and selects:
+
+"What happened here?"
+
+Show a timeline.
+
+Example:
+
+09:12
+Pothole detected
+
+10:48
+Heavy traffic
+
+12:16
+Waterlogging detected
+
+13:02
+Pedestrian risk detected
+
+16:42
+Traffic normalized
+
+Then show:
+
+AI SUMMARY
+
+"This location experienced repeated congestion and waterlogging today. Road conditions may have contributed to slower traffic."
+
+Make the timeline visually strong.
+
+==================================================
+21. "BUS AS A WITNESS"
+======================
+
+For relevant incidents, show multiple bus observations.
+
+Example:
+
+INCIDENT
+Possible road collision
+
+Bus 217
+Approaching
+09:41:12
+
+Bus 217
+Incident detected
+09:41:18
+
+Bus 217
+Passing location
+09:41:31
+
+Bus 304
+Independent observation
+09:42:04
+
+Show:
+
+* bus
+* camera view
+* direction
+* timestamp
+* distance from incident
+* observation
+
+Create a visual multi-perspective timeline.
+
+This should communicate that the fleet can collectively provide multiple observations of the same event.
+
+==================================================
+22. "PEOPLE CONFIRMED THIS"
+===========================
+
+For selected road issues, show an independent-observation confidence layer.
+
+Example:
+
+POTHOLE
+12 independent observations
+
+Seen by:
+3 buses
+9 citizen reports
+
+Last detected:
+8 minutes ago
+
+Create a visual confidence indicator.
+
+Do NOT represent this as actual citizen data.
+
+Label the data as simulated.
+
+If duplicate reports exist, show:
+
+30 reports
+↓
+1 consolidated issue
+↓
+30 confirmations
+
+This demonstrates deduplication.
+
+==================================================
+23. REPAIR VERIFICATION
+=======================
+
+Create a repair lifecycle:
+
+DETECTED
+↓
+REPORTED
+↓
+REPAIR INITIATED
+↓
+MARKED REPAIRED
+↓
+RE-OBSERVED
+↓
+VERIFIED
+
+Example:
+
+Pothole #PTH-1042
+
+Detected
+Aug 12
+
+Reported
+Aug 12
+
+Repair marked complete
+Aug 14
+
+Re-observed by Bus 142
+Aug 15
+
+Verification:
+Pending / Verified
+
+Allow the prototype to simulate progression through statuses.
+
+A button such as:
+
+"Simulate Re-observation"
+
+can update the status.
+
+==================================================
+24. AI "WHY?" EXPLANATION
+=========================
+
+Whenever a significant alert appears, provide a "Why?" action.
+
+Example:
+
+ROAD RISK: HIGH
+
+Why?
+
+* 7 pothole detections in 24 hours
+* 3 waterlogging observations
+* traffic speed reduced by 38%
+* 4 buses observed the same location
+* maintenance confirmation 21 days ago
+
+This is a simulated explainability interface.
+
+Do not claim this is an actual model explanation.
+
+==================================================
+25. AI MAINTENANCE PRIORITY
+===========================
+
+Include a maintenance-priority view inside City Intelligence.
+
+Show:
+
+Today's Priority Issues
+
+1. X Road — Large pothole — Critical
+2. Y Junction — Waterlogging — Critical
+3. Z Road — Missing divider — High
+
+Include factors behind the priority.
+
+Make this a decision-support visualization rather than simply a list.
+
+==================================================
+26. VOICE + LOCAL LANGUAGE SUPPORT
+==================================
+
+Include a voice interaction UI.
+
+It does NOT need real speech recognition.
+
+Create a microphone button.
+
+When clicked:
+
+* show "Listening..." simulation
+* provide sample supported phrases
+
+Example:
+
+"Mere route pe koi pothole hai kya?"
+
+Then respond:
+
+"Haan. Aapke route par 2 high-severity road hazards detect hue hain."
+
+Include language options such as:
+
+English
+Hindi
+Marathi
+
+This is a prototype simulation.
+
+==================================================
+27. AI & PRIVACY SECTION
+========================
+
+Create an "AI & Privacy" section containing:
+
+1. Federated Learning
+2. Privacy Center
+
+These are two of the major technical differentiators of the prototype.
+
+==================================================
+28. FEDERATED LEARNING
+======================
+
+IMPORTANT:
+
+Do NOT pretend that actual federated model training is happening.
+
+Build a technically accurate **Federated Learning Simulation**.
+
+Core concept:
+
+Each bus keeps its local training data.
+
+The bus performs simulated local training.
+
+Only model updates are represented as being sent.
+
+A central server performs simulated secure aggregation.
+
+A new global model is produced.
+
+Visual flow:
+
+Central Global Model
+↓
+Bus 102
+Bus 118
+Bus 127
+Bus 143
+↓
+Local Training
+↓
+Model Updates
+↓
+Secure Aggregation
+↓
+Global Model v1.12
+
+Create an interactive button:
+
+"Run Training Round"
+
+When clicked, animate:
+
+1. Preparing local datasets
+2. Bus 102 training
+3. Bus 118 training
+4. Bus 127 training
+5. Bus 143 training
+6. Collecting model updates
+7. Secure aggregation
+8. Global model updated
+
+Then show:
+
+Global Model v1.12
+
+Training Round 12
+
+Participating Buses: 24
+
+Raw Camera Data Transferred:
+0 GB
+
+Use simulated metrics.
+
+==================================================
+29. FEDERATED LEARNING DASHBOARD
+================================
+
+Show:
+
+Global Model
+v1.12
+
+Current Round
+12
+
+Participating Buses
+24
+
+Local Training Jobs
+24
+
+Aggregation Status
+Complete
+
+Create a table:
+
+Bus
+Local Samples
+Training Status
+Local Model
+Update Status
+
+Example:
+
+BUS-102
+4,820
+Completed
+v1.12-local
+Uploaded
+
+BUS-118
+3,940
+Completed
+v1.12-local
+Uploaded
+
+BUS-127
+5,210
+Training
+v1.12-local
+Pending
+
+Include model history:
+
+Round 10 → v1.10
+Round 11 → v1.11
+Round 12 → v1.12
+
+Use charts where useful.
+
+Clearly label:
+"Simulated training environment"
+
+==================================================
+30. PRIVACY CENTER
+==================
+
+Create a Privacy Center that visually explains how data moves.
+
+Flow:
+
+Camera Feed
+↓
+Local Privacy Processing
+↓
+Face / License Plate Anonymization
+↓
+Edge AI
+↓
+Required Metadata / Model Update
+↓
+Central Command Center
+
+The UI should emphasize:
+
+Raw video remains local.
+
+Include simulated privacy metrics:
+
+Raw video transmitted:
+0 GB
+
+Faces anonymized:
+1,284
+
+License plates protected:
+436
+
+Local processing:
+Active
+
+Data minimization:
+Enabled
+
+Secure transmission:
+Active
+
+Retention policy:
+Configured
+
+Make each stage clickable to reveal a short explanation.
+
+==================================================
+31. PRIVACY-PRESERVING PROCESSING
+=================================
+
+Show specific controls:
+
+* Face anonymization
+* License plate anonymization
+* Local video processing
+* Metadata minimization
+* Secure transmission
+* Access control
+* Retention policy
+
+Allow toggling some settings in the prototype.
+
+For example:
+
+Face anonymization
+ON
+
+License plate protection
+ON
+
+Raw video upload
+OFF
+
+Extended retention
+OFF
+
+These are simulated controls.
+
+==================================================
+32. CONNECTION BETWEEN PRIVACY + FEDERATED LEARNING
+===================================================
+
+Create a small architecture visualization:
+
+BUS CAMERA
+↓
+Privacy Processing
+↓
+Local AI
+↓
+Local Model Update
+↓
+Secure Aggregation
+↓
+Global Model
+
+Explain:
+
+"Raw camera footage remains on the bus. Privacy processing reduces sensitive information exposure, while federated learning allows the fleet to collaboratively improve the shared model without centralizing raw training data."
+
+Keep this concise.
+
+==================================================
+33. TRAFFIC ANALYTICS
+=====================
+
+Use Recharts for:
+
+* congestion trend
+* vehicle density
+* average speed
+* route delay
+* incident trend
+* road issue trend
+
+Use realistic mock data.
+
+Allow date/time filters such as:
+
+Today
+7 Days
+30 Days
+
+==================================================
+34. INCIDENT REPORTING
+======================
+
+Create a report-generation interaction.
+
+Button:
+
+"Generate Incident Report"
+
+Show a polished report preview containing:
+
+* incident ID
+* incident type
+* location
+* timestamp
+* GPS
+* source buses
+* evidence summary
+* vehicle registration if applicable
+* confidence
+* current status
+
+This can be generated entirely from mock data.
+
+Provide a simulated:
+"Export Report" button.
+
+No actual backend export is required unless easy to implement.
+
+==================================================
+35. NOTIFICATIONS
+=================
+
+Create a notification panel.
+
+Examples:
+
+Critical road hazard detected
+Bandra
+2 min ago
+
+Incident independently confirmed
+S.V. Road
+8 min ago
+
+Repair verification required
+Kurla
+12 min ago
+
+Federated training round completed
+24 buses
+18 min ago
+
+Make notifications clickable.
+
+==================================================
+36. DEMO DATA
+=============
+
+Create a coherent mock dataset.
+
+Do not randomly generate unrelated values.
+
+The data should have relationships.
+
+Example:
+
+Bus 142
+Route 305
+S.V. Road
+observed Pothole PTH-1042
+
+Bus 217
+Route 218
+Bandra
+observed Incident INC-204
+
+Bus 304
+Route 312
+same incident INC-204
+independent observation
+
+This allows:
+
+* incidents to connect to buses
+* buses to connect to routes
+* routes to connect to map locations
+* incidents to connect to timelines
+* incidents to connect to repair workflows
+* buses to connect to federated learning
+
+Create around:
+
+20–30 buses
+20–40 incidents
+10–15 routes
+multiple road hazards
+multiple traffic zones
+multiple pedestrian safety alerts
+multiple infrastructure issues
+
+==================================================
+37. INTERACTION QUALITY
+=======================
+
+The prototype must not feel static.
+
+Implement:
+
+* working navigation
+* working search
+* working filters
+* working tabs
+* working map markers
+* working side panels
+* working detail pages
+* working toggles
+* working status changes
+* working training simulation
+* working privacy-flow interactions
+* working Ask the City responses
+* working repair simulation
+* working notification interactions
+
+Use smooth but subtle transitions.
+
+Do not over-animate.
+
+==================================================
+38. RESPONSIVENESS
+==================
+
+The primary target is desktop/laptop because this represents a command-center platform.
+
+Still make the UI reasonably responsive.
+
+At minimum:
+
+* desktop
+* laptop
+* tablet
+
+The map and side panels should adapt cleanly.
+
+==================================================
+39. EMPTY / LOADING / ERROR STATES
+==================================
+
+Add polished states where useful:
+
+Loading data...
+No incidents match your filters.
+No buses currently offline.
+No repair verification pending.
+
+Do not leave blank white areas.
+
+==================================================
+40. ACCESSIBILITY
+=================
+
+Use:
+
+* readable typography
+* sufficient contrast
+* meaningful icons
+* tooltips where needed
+* keyboard-friendly controls where practical
+* text labels alongside important icons
+
+Do not rely exclusively on color to communicate severity.
+
+==================================================
+41. IMPORTANT PS REQUIREMENTS TO REPRESENT
+==========================================
+
+The prototype must visibly demonstrate the following capabilities from the problem statement:
+
+* Public buses as mobile urban sensing units
+* Multiple onboard cameras
+* Road defect/hazard detection
+* Pothole detection
+* Damaged road detection
+* Missing road divider detection
+* Missing zebra crossing detection
+* Damaged/missing traffic sign detection
+* Waterlogging detection
+* Vehicle detection
+* Vehicle classification
+* Vehicle counting
+* Vehicle density estimation
+* Traffic bottleneck identification
+* Congestion monitoring
+* Vulnerable pedestrian detection
+* School-child road-crossing safety scenario
+* Hit-and-run detection
+* Rash-driving detection
+* Vehicle tracking
+* Registration-number OCR
+* OCR confidence
+* Timestamp
+* GPS
+* Secure incident sharing
+* Fleet-wide aggregation
+* GIS visualization
+* Congestion heatmaps
+* Infrastructure analysis
+* OD traffic patterns
+* Route-delay estimation
+* Actionable transport-authority insights
+* Edge-AI processing
+* Reliable alerts
+* Road-condition maps
+* Traffic analytics
+* Incident reports
+* Decision support
+* Proactive maintenance support
+* Traffic-management support
+* Public-safety support
+* Evidence-based decision support
+* Bandwidth optimization through edge processing
+
+All of these can be represented through mock/simulated data, but they should be discoverable in the UI.
+
+==================================================
+42. WHAT NOT TO DO
+==================
+
+Do NOT:
+
+* build a generic admin dashboard
+* use neon colors
+* use excessive gradients
+* make everything glow
+* create fake AI chat everywhere
+* claim simulated metrics are real
+* claim actual federated training is occurring
+* claim actual Mumbai government data is being displayed
+* create dozens of unnecessary pages
+* overload the dashboard with every metric
+* use lorem ipsum
+* leave buttons non-functional when they can reasonably be implemented
+* make every card look identical
+* make the interface look like a cryptocurrency/AI startup dashboard
+
+==================================================
+43. DEMO FLOW
+=============
+
+The final prototype should support this presentation flow:
+
+1. Open Overview.
+
+2. Show the Mumbai City Health summary.
+
+3. Explain the live fleet and current city situation.
+
+4. Click a critical map incident.
+
+5. Show popup.
+
+6. Open side panel.
+
+7. Open Full Incident Details.
+
+8. Show:
+
+   * timestamp
+   * GPS
+   * confidence
+   * vehicle/OCR information where applicable
+   * incident timeline
+
+9. Show "Bus as a Witness."
+
+10. Show independent observations / "People Confirmed This."
+
+11. Show "What Happened Here?"
+
+12. Show repair verification.
+
+13. Return to City Intelligence.
+
+14. Use Ask the City.
+
+15. Open Fleet.
+
+16. Open a bus and show its:
+
+* cameras
+* edge AI
+* privacy status
+* federated-learning status
+
+17. Open AI & Privacy.
+
+18. Run a simulated Federated Learning round.
+
+19. Show:
+    Bus local training
+    → model updates
+    → secure aggregation
+    → new global model
+
+20. Open Privacy Center.
+
+21. Show:
+    Camera
+    → anonymization
+    → local AI
+    → required data/model update
+    → central intelligence
+
+22. Finish on the Overview dashboard.
+
+==================================================
+44. FINAL QUALITY BAR
+=====================
+
+The final application should look like something that could be shown to SIH judges as a serious working prototype.
+
+Prioritize:
+
+1. Visual polish
+2. Coherent product experience
+3. Strong map interaction
+4. Strong incident workflow
+5. Strong fleet experience
+6. Federated Learning simulation
+7. Privacy-preserving processing
+8. Clear demonstration of PS requirements
+9. Smooth navigation
+10. Realistic interconnected mock data
+
+The prototype should communicate this story:
+
+**Buses become mobile sensing units.**
+
+↓
+
+**Edge AI processes information locally.**
+
+↓
+
+**Privacy processing protects sensitive data.**
+
+↓
+
+**Important incidents and insights are securely surfaced to the city.**
+
+↓
+
+**Multiple buses and observations create stronger evidence.**
+
+↓
+
+**Federated Learning allows the fleet to collaboratively improve AI models without centralizing raw training data.**
+
+↓
+
+**City authorities receive actionable intelligence for traffic, infrastructure, road safety and public safety.**
+
+Build the application now.
+Start with the complete functional structure and core styling, then implement the pages and interactions described above.
+
+Do not ask me to manually create every component one by one. Make sensible implementation decisions yourself while following this specification.
