@@ -1,0 +1,369 @@
+MODIFY THE EXISTING URBANPULSE APPLICATION — DO NOT REBUILD IT FROM SCRATCH.
+
+I want to make a focused UX/content cleanup of the existing UrbanPulse application. Preserve the existing design system, routes, map, components, mock data, interactions, functionality, and overall visual quality. Do NOT remove any required Problem Statement functionality.
+
+IMPORTANT: Make these changes carefully and consistently across the entire application.
+
+==================================================
+1. REMOVE "SIMULATED" / "MOCK" LANGUAGE FROM THE VISIBLE UI
+==================================================
+
+Remove visible wording that unnecessarily exposes the prototype/simulation nature of the application.
+
+Remove phrases such as:
+- "Simulated data"
+- "simulated data"
+- "Simulated voice"
+- "simulated FL"
+- "simulated federated learning"
+- "mock telemetry"
+- "mock data"
+- "prototype telemetry"
+- similar visible labels/disclaimers
+
+For example, on Overview, currently there is text like:
+
+"A command-center perspective on movement, road health and public safety. Every signal below is mock telemetry for the UrbanPulse prototype."
+
+Rewrite this so it describes the actual functionality instead of saying it is mock/simulated.
+
+Use clear wording such as:
+
+"Monitor movement, road health, traffic and public safety from one unified city intelligence view."
+
+Do NOT add another disclaimer elsewhere to replace it.
+
+Also remove "Simulated data" badges such as the one currently shown beside:
+"Four ways UrbanPulse closes the loop"
+
+The UI should feel like a polished product demonstration, not like a development/test interface.
+
+IMPORTANT:
+This is only a UI wording change. Keep the underlying demo/mock data and simulated functionality exactly as it currently works. Do not attempt to build real AI, real federated learning, real city infrastructure integrations, or real citizen systems.
+
+==================================================
+2. MAKE PAGE TITLES CLEAR AND FUNCTIONAL
+==================================================
+
+Several current page headings use vague or overly marketing-style language.
+
+For example, the Overview currently says:
+
+"The city, in one considered view."
+
+This is not immediately understandable.
+
+Replace it with a clear title:
+
+"Mumbai City Intelligence Overview"
+
+Supporting text:
+
+"Monitor public transport, road conditions, traffic, incidents and pedestrian safety from one unified city view."
+
+The goal is that a user should immediately understand:
+- what this page is
+- what information it provides
+- why they are looking at it
+
+Review the headings/subheadings across ALL major pages and improve unclear titles in the same way.
+
+Do NOT blindly replace every heading. Keep headings that are already clear.
+
+Avoid poetic/vague titles such as:
+- "The city, in one considered view"
+- similar abstract marketing phrases
+
+Prefer clear product language such as:
+- "Mumbai City Intelligence Overview"
+- "City Intelligence & Analytics"
+- "Public Transport Fleet"
+- "Incident Management"
+- "About UrbanPulse"
+
+Keep the writing professional, concise and suitable for a smart-city/government technology platform.
+
+==================================================
+3. RENAME "AI & PRIVACY" TO "ABOUT"
+==================================================
+
+Change the navigation item:
+
+AI & Privacy
+
+to:
+
+About
+
+The main navigation should now be:
+
+1. Overview
+2. City Intelligence
+3. Fleet
+4. Incidents
+5. About
+
+Update the route/page title and all visible navigation labels consistently.
+
+Do not leave "AI & Privacy" as a navigation label anywhere.
+
+==================================================
+4. MOVE "FOUR WAYS URBANPULSE CLOSES THE LOOP" FROM OVERVIEW TO ABOUT
+==================================================
+
+Currently Overview contains this section:
+
+"Four ways UrbanPulse closes the loop"
+
+with the four cards:
+
+1. See it → Report it
+   Citizen reports become validated issues
+
+2. Repair verification
+   Re-observe repairs with moving sensors
+
+3. Bus as a witness
+   Multiple cameras reconstruct events
+
+4. Ask the City
+   Query the intelligence behind the signals
+
+REMOVE THIS ENTIRE SECTION FROM THE OVERVIEW PAGE.
+
+Do not duplicate it on Overview.
+
+Move this section to the About page.
+
+Keep the four primary differentiators exactly as the main four differentiators:
+
+1. See It → Report It
+2. Repair Verification
+3. Bus as a Witness
+4. Ask the City
+
+Keep the existing visual card design and icons where appropriate.
+
+==================================================
+5. REDESIGN THE CONTENT STRUCTURE OF THE ABOUT PAGE
+==================================================
+
+The page previously called "AI & Privacy" should now become a clear:
+
+"About UrbanPulse"
+
+page.
+
+It should explain what UrbanPulse is and how the platform works.
+
+Suggested structure:
+
+ABOUT URBANPULSE
+
+Title:
+"About UrbanPulse"
+
+Supporting text:
+"UrbanPulse is a city intelligence platform that turns observations from public transport, citizens and city infrastructure into actionable information for safer, better-managed urban mobility."
+
+Then prominently place:
+
+"Four ways UrbanPulse closes the loop"
+
+with the four differentiator cards:
+
+- See It → Report It
+- Repair Verification
+- Bus as a Witness
+- Ask the City
+
+After that, retain the existing AI/privacy/federated-learning content that already exists in the current AI & Privacy page, but organize it under clear sections.
+
+For example:
+
+"Edge AI & City Intelligence"
+Explain that processing can happen closer to the source, reducing unnecessary transmission and enabling timely detection.
+
+"Privacy by Design"
+Keep the existing privacy workflow and privacy controls.
+
+"Federated Learning"
+Keep the existing federated-learning workflow and model-training simulation.
+
+IMPORTANT:
+Do not create a completely new architecture.
+Reuse the existing components and content already present in AI & Privacy wherever possible.
+
+==================================================
+6. KEEP THE SUB-FEATURE HIERARCHY
+==================================================
+
+Do NOT turn the following into separate navigation items or standalone pages:
+
+- People Confirmed This
+- What Happened Here?
+- Voice / local-language interaction
+
+They should remain integrated into their parent differentiators:
+
+Citizen Reporting:
+- See It → Report It
+- GPS
+- Issue categorization
+- Duplicate detection
+- Consolidation
+- People Confirmed This / citizen + fleet confirmation
+
+Repair Verification:
+- Repair workflow
+- Re-observation
+- Confirmation
+- What Happened Here? / incident timeline
+
+Ask the City:
+- Natural-language queries
+- English
+- Hindi
+- Marathi
+- Voice interaction
+
+Bus as a Witness:
+- Multi-camera observations
+- Event reconstruction
+- Witness timeline
+
+==================================================
+7. KEEP OVERVIEW OPERATIONAL
+==================================================
+
+After removing the four-differentiator section, Overview should focus on city operations.
+
+Keep the existing:
+
+- Mumbai city overview
+- Active buses
+- Active incidents
+- Road hazards
+- Traffic/congestion
+- Route delays
+- Pedestrian safety
+- Mumbai map
+- Map overlays
+- Live alerts
+- City status/summary
+- Report an issue CTA
+- Existing useful overview information
+
+The Overview should feel like a command-center dashboard.
+
+Do NOT replace it with an About/marketing page.
+
+==================================================
+8. KEEP EXISTING FUNCTIONALITY
+==================================================
+
+Do NOT remove or break:
+
+- OpenStreetMap Mumbai map
+- Bus markers
+- Incident markers
+- Hazard layers
+- Traffic/congestion layers
+- Route information
+- Fleet filtering
+- Incident filtering
+- Bus detail pages
+- Incident detail pages
+- Citizen reporting workflow
+- Duplicate matching
+- Citizen/fleet confirmation
+- Incident timeline
+- Repair verification
+- Bus as a Witness
+- Ask the City
+- English/Hindi/Marathi controls
+- Voice interaction
+- City Intelligence analytics
+- OD traffic analytics
+- AI/privacy architecture
+- Federated learning workflow
+- Privacy controls
+- Notifications
+- Report generation
+- Existing responsive behavior
+
+Only change the organization, wording and placement requested above.
+
+==================================================
+9. REMOVE UNCLEAR MARKETING LANGUAGE
+==================================================
+
+Across the application, prefer clear functional language over vague marketing language.
+
+For example:
+
+Instead of:
+"The city, in one considered view."
+
+Use:
+"Mumbai City Intelligence Overview"
+
+Instead of:
+"Query the intelligence behind the signals"
+
+You may keep this as supporting copy if it fits, but make sure the actual page/function is obvious.
+
+The user should never have to guess what a page or section does from its title.
+
+Use concise, professional smart-city terminology.
+
+==================================================
+10. VISUAL CONSISTENCY
+==================================================
+
+Preserve the current visual style:
+
+- Light theme
+- White/off-white surfaces
+- Deep navy text
+- Restrained blue/teal accents
+- Thin borders
+- Subtle shadows
+- Slightly rounded cards
+- Professional government/smart-city appearance
+- No neon colors
+- No cyberpunk styling
+- No unnecessary gradients/glows
+- No generic AI-dashboard aesthetic
+
+Do not redesign the application unnecessarily.
+
+==================================================
+11. FINAL VERIFICATION
+==================================================
+
+After making the changes:
+
+1. Run typecheck.
+2. Run the production build.
+3. Check that all routes still load.
+4. Check navigation.
+5. Check Overview.
+6. Check About.
+7. Check City Intelligence.
+8. Check Fleet.
+9. Check Incidents.
+10. Check Ask the City.
+11. Check an Incident Detail page.
+12. Check that no visible "Simulated", "mock telemetry", or similar prototype wording remains.
+13. Check that "AI & Privacy" is no longer used as the navigation/page name.
+14. Check that the "Four ways UrbanPulse closes the loop" section exists on About and NOT on Overview.
+15. Check browser console for new errors.
+
+Do not rebuild the application from scratch.
+
+Do not change the underlying demo functionality.
+
+Do not add unnecessary new features.
+
+Make the smallest clean set of changes necessary to achieve the above.
