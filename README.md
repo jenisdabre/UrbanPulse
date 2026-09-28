@@ -18,46 +18,82 @@ UrbanPulse turns the bus fleet into a mobile urban sensing network. Edge AI on e
 
 ## Key Features
 
-### City Overview
+### AI-Powered Mobile Urban Sensing
 
-* Live Mumbai GIS map with active buses, incidents, road hazards, congestion and pedestrian safety
-* Live alerts and clickable incident markers
+- Public transport buses act as mobile sensing units using onboard cameras
+- Continuous city-wide monitoring without relying only on fixed CCTV infrastructure
 
-### Incident Detection and Details
+### Road Hazard Detection
 
-* Location, severity, timestamp and detection information for each incident
-* Community confirmation (for example: 30 citizens + 4 buses confirmed this)
+- Detects potholes, damaged roads, missing road dividers, faded zebra crossings
+- Identifies damaged or missing traffic signboards, waterlogging, and other road hazards
+
+### Traffic Monitoring and Analytics
+
+- Vehicle detection, classification, and counting
+- Traffic density estimation and congestion hotspot identification
+- Route delay estimation and traffic bottleneck analysis
+
+### Vulnerable Pedestrian Safety
+
+- Detects high-risk pedestrian situations
+- Special focus on school zones and pedestrian crossings
+
+### Incident Detection and Vehicle Tracking
+
+- Detects rash driving and hit-and-run incidents
+- Tracks offending vehicles across multiple observations
+- Extracts vehicle registration numbers using OCR with confidence scores
+
+### GIS-Based Urban Intelligence Dashboard
+
+- Visualizes incidents, hazards, and traffic events on an interactive GIS map
+- Generates congestion heatmaps and road condition maps
+
+### Infrastructure Deficiency Monitoring
+
+- Identifies missing or damaged public infrastructure
+- Supports proactive maintenance planning for city authorities
+
+### Fleet-Wide Data Aggregation
+
+- Combines observations from multiple buses across the city
+- Provides a comprehensive and continuously updated urban view
+
+### Actionable Decision Support
+
+- Generates alerts, reports, and insights for transport authorities
+- Enables evidence-based traffic management and urban planning
+
+## Unique Selling Propositions (USP)
 
 ### Bus as a Witness
 
-* Multiple independent bus camera observations of the same incident
-* Timeline, vehicle/event tracking and registration/OCR information
+- Multiple independent bus camera observations of the same incident
+- Timeline, vehicle/event tracking, and registration/OCR information
 
 ### Repair Verification
 
-* Full lifecycle: Detected, Reported, Repaired, Re-observed, Verified
-* Re-observation by passing buses confirms repairs without manual follow-up
+- Full lifecycle tracking: Detected → Reported → Repaired → Re-observed → Verified
+- Passing buses automatically verify completed repairs
 
 ### Citizen Reporting (See It, Report It)
 
-* GPS capture, issue category and photo-based reporting
-* Duplicate matching and consolidation with existing issues
+- GPS-enabled reporting with photos and issue categorization
+- Automatic duplicate detection and issue consolidation
 
 ### Ask the City
 
-* Natural-language questions such as "Which areas currently have the highest number of road hazards?"
-* Hindi and Marathi support and voice interaction
-
-### City Intelligence
-
-* Traffic analytics, congestion, road conditions, route delays
-* Origin-Destination (OD) analysis and heatmaps
+- Natural language city analytics queries
+- Hindi and Marathi language support
+- Voice-based interaction
 
 ### AI, Privacy and Federated Learning
 
-* Edge AI for on-device processing
-* Privacy-first design
-* Federated learning: models improve across the city without raw data leaving local devices
+- Edge AI processing directly on buses
+- Privacy-first architecture
+- Federated learning improves models without transferring raw data
+
 
 ## Tech Stack
 
@@ -127,8 +163,6 @@ pnpm dev
 ```
 
 ## Team UrbanPulse
-
-
 
 * Trisha Deshmukh
 * Sanika Mane
